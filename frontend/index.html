@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friday Chat - Group Chat App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     Login Screen 
+    <div id="loginScreen" class="screen">
+        <div class="login-container">
+            <h1>Friday Chat</h1>
+            <p>Enter your name to join the conversation</p>
+            <form id="loginForm">
+                <input 
+                    type="text" 
+                    id="nameInput" 
+                    placeholder="Your name" 
+                    required 
+                    maxlength="50"
+                    autocomplete="name"
+                >
+                <button type="submit">Join Chat</button>
+            </form>
+        </div>
+    </div>
+
+     Chat Screen 
+    <div id="chatScreen" class="screen hidden">
+         Header 
+        <header class="chat-header">
+            <div class="group-info">
+                <h2 id="groupTitle">Friday Chat</h2>
+                <div class="online-count">
+                    <span class="online-dot"></span>
+                    <span id="onlineCount">0 online</span>
+                </div>
+            </div>
+            <div class="user-info">
+                <img id="userAvatar" src="/placeholder.svg" alt="Your avatar" class="avatar">
+                <span id="userName"></span>
+            </div>
+        </header>
+
+         Messages Container 
+        <main class="messages-container" id="messagesContainer">
+            <div class="messages-list" id="messagesList">
+                 Messages will be inserted here 
+            </div>
+        </main>
+
+         Anonymous Mode Indicator 
+        <div id="anonymousIndicator" class="anonymous-indicator hidden">
+            <span>🕶️ You're appearing as Anonymous</span>
+        </div>
+
+         Message Input 
+        <footer class="message-input-container">
+            <div class="input-controls">
+                <label class="anonymous-toggle">
+                    <input type="checkbox" id="anonymousMode">
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Anonymous</span>
+                </label>
+            </div>
+            <form id="messageForm" class="message-form">
+                <input 
+                    type="text" 
+                    id="messageInput" 
+                    placeholder="Type a message..." 
+                    required
+                    maxlength="1000"
+                    aria-label="Message input"
+                >
+                <button type="submit" id="sendButton" aria-label="Send message">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                    </svg>
+                </button>
+            </form>
+        </footer>
+    </div>
+
+     Loading indicator 
+    <div id="loadingIndicator" class="loading hidden">
+        <div class="spinner"></div>
+        <span>Connecting...</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
